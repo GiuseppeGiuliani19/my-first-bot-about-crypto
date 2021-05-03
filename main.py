@@ -194,8 +194,8 @@ while activated:
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 while activated:
-    #CON QUESTA DOMANDA APRIAMO UN'ALTRA AREA DEL BOT,QUI IL BOT CHIEDE SE L'UTENTE E' INTERESSATO AD UN CRYPTO IN
-    #PARTICOLARE
+    '''CON QUESTA DOMANDA APRIAMO UN'ALTRA AREA DEL BOT,QUI IL BOT CHIEDE SE L'UTENTE E' INTERESSATO AD UN CRYPTO IN
+    PARTICOLARE'''
     Answer_particular_crypto = input('Are you interesting in a particular crypto? : ')
     #L'UTENTE DIGITA IL SIMBOLO DELLA CRYPTO,SE RISPONDE YES
     if Answer_particular_crypto == 'yes':
@@ -203,7 +203,6 @@ while activated:
             moneta_fiat = input('Write a symbol of a fiat coin who you are interesting in '
                                 'converting: ')
             url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
-           # url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
             parameters = {
               'symbol': name_crypto, 'convert': moneta_fiat
             }
@@ -226,7 +225,7 @@ while activated:
               print(f"price: {quote_obj['data'][name_crypto]['quote'][moneta_fiat]['price']} {moneta_fiat}")
               #VOLUME
               print(f"volume 24h: {quote_obj['data'][name_crypto]['quote'][moneta_fiat]['volume_24h']} {moneta_fiat}")
-              '''VARIAZIONI DI 1H, 24H, 7D, 30D'''
+              #VARIAZIONI DI 1H, 24H, 7D, 30D
               print(f"Percent change 1h: "
                     f"{quote_obj['data'][name_crypto]['quote'][moneta_fiat]['percent_change_1h']} %")
               print(f"Percent change 24h: "
